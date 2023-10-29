@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 'On');
 require_once("DataBase.php");
-include_once("Interfaces.php");
+include_once("ClassTest.php");
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include_once("Interfaces.php");
     <title>Document</title>
 </head>
 <body>
-    <form action="Interfaces.php" method="POST" class="formulaire">
+    <form action="ClassTest.php" method="POST" class="formulaire">
         <h1>Connexion</h1>
         <h4>Votre chauffeur en un clic !</h4>
         <br>
