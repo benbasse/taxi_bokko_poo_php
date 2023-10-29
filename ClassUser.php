@@ -27,12 +27,12 @@ class User extends DataBase{
     }
     public function setNom($nom)
     {
-        if (is_string($nom) && strlen($nom) > 0 && strlen($nom) < 20) {
+        // if (is_string($nom) && strlen($nom) > 0 && strlen($nom) < 20) {
             $this->nom = $nom;
             return $this;
-        } else {
-            throw new Exception("Le nom que vous avez saisi est incorrect");
-        }
+        // } else {
+        //     throw new Exception("Le nom que vous avez saisi est incorrect");
+        // }
     }
 //Get the value of prenom-------------------------------------------------------
     public function getPrenom()
@@ -41,12 +41,12 @@ class User extends DataBase{
     }
     public function setPrenom($prenom)
     {
-        if (is_string($prenom) && strlen($prenom) > 0 && strlen($prenom) < 20) {
+        // if (is_string($prenom) && strlen($prenom) > 0 && strlen($prenom) < 20) {
             $this->prenom = $prenom;
             return $this;
-        } else {
-            throw new Exception("Le nom que vous avez saisie est incorrect");
-        }
+        // } else {
+        //     throw new Exception("Le nom que vous avez saisie est incorrect");
+        // }
     }
 // Get the value of telephone--------------------------------------------------------------------------------
     public function getPhone()
@@ -95,21 +95,14 @@ class User extends DataBase{
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute
         ([
-            $this->nom,
             $this->prenom,
+            $this->nom,
             $this->email,
             $this->password,
             $this->phone,
         ]);
+        echo "Inscription réussit";
     }
-    // Fonction pour se connecter 
-    // public function Verification()
-    // {
-    //     if($this->email == $_POST["email"] && $this->password == $_POST["password"])
-    //     {
-    //         $stmt = $this->connect();
-    //     }
-    // }
 }
 // Objet User 
 $nom = $_POST["nom"];
@@ -117,12 +110,8 @@ $prenom = $_POST["prenom"];
 $phone = $_POST["telephone"];
 $email = $_POST["email"];
 $password = $_POST["password"];
-$user = new User($nom, $prenom, $email, $password, $phone);
+$user = new User($prenom, $nom, $email, $password, $phone);
 $user->Insert();
-// // $user->Insert($conn);
-// $userDB = new DataBase();
-// // $userDB->Insert($user);
-
 
 
 ?>
