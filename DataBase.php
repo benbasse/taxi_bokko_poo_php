@@ -12,7 +12,7 @@ class DataBase
         $this->servername = "localhost";
         $this->username = "ben221";
         $this->password = "B@sse@bdou221";
-        $this->dbname = "nom_de_la_base";
+        $this->dbname = "taxi_bokko";
         try 
         {
             $dsn = "mysql:host=".$this->servername.";dbname=".$this->dbname;
