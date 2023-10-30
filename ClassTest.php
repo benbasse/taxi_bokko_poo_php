@@ -44,7 +44,8 @@ if (!empty($_POST["email"]) && !empty($_POST["password"]))
 // Vérifier maintenant si l'email et le password verifier sont correct grace à la fonction UserExist
         if ($user->userExist($emailToCheck, $passwordToCheck)) 
         {
-            echo '<a href="affichageUser.php">Consulter la liste des Utilisateurs de Taxi_Bokko.</a>';
+            echo 'Consulter la liste des Utilisateurs de Taxi_Bokko.';
+            header('location: affichageUser.php');
         } else 
         {
             echo "L'utilisateur n'existe pas dans la base de données ou le mot de passe ne correspond pas.";

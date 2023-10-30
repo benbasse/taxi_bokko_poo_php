@@ -104,7 +104,8 @@ class User extends DataBase
             $this->phone,
         ]);
         echo "Inscription réussit <br/>"; 
-        echo '<a href="Connexion.php">Se coonecter à mon compte.</a>';
+        echo 'Se coonecter à mon compte';
+        header('location:Connexion.php');
         die();
     }
 }
